@@ -1,7 +1,6 @@
-use double_linked_list::{Node, BetterLogTransaction};
+use double_linked_list::{Node, BetterLogTransaction, ListIterator};
 use std::{cell::RefCell, rc::Rc};
 
-mod linked_list;
 mod double_linked_list;
 
 fn main() {
@@ -10,5 +9,11 @@ fn main() {
     log.append(String::from("2"));
     log.append(String::from("3"));
     log.append(String::from("4"));
-    println!("{:?}", log);
+
+    let mut log_iter = ListIterator::new(log.head);
+
+    for item in log_iter {
+        println!("{:?}", item);
+    }
+
 }

@@ -2,8 +2,6 @@ use std::{borrow::BorrowMut, cell::RefCell, rc::Rc};
 
 type Link = Option<Rc<RefCell<Node>>>;
 
-
-
 #[derive(Debug, Clone)]
 pub struct Node {
     pub prev: Link,
@@ -57,7 +55,7 @@ pub struct ListIterator {
 }
 
 impl ListIterator {
-    fn new(start_at: Link) -> ListIterator {
+    pub fn new(start_at: Link) -> ListIterator {
         ListIterator { current: start_at }
     }
 }
@@ -99,4 +97,8 @@ impl DoubleEndedIterator for ListIterator {
 
         result
     }
+}
+
+fn main() {
+
 }
