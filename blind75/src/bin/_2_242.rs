@@ -8,7 +8,7 @@ fn _is_anagram_hashmap(s: String, t: String) -> bool {
     if s.len() != t.len() {
         return false;
     }
-
+    
     let mut memory = s.chars().fold(HashMap::<char, i32>::new(), |mut map, c| {
         map.entry(c).and_modify(|v| *v += 1).or_insert(1);
         map

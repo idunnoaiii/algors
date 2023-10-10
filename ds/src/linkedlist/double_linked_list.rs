@@ -37,14 +37,14 @@ impl BetterLogTransaction {
 
     pub fn append(&mut self, value: String) {
         let new_node = Node::new(value);
-        
+
         match self.tail.take() {
             Some(old) => {
                 (*old).borrow_mut().next = Some(new_node.clone());
-            },
+            }
             None => self.head = Some(new_node.clone()),
         };
-        
+
         self.len += 1;
         self.tail = Some(new_node.clone());
     }
@@ -97,8 +97,4 @@ impl DoubleEndedIterator for ListIterator {
 
         result
     }
-}
-
-fn main() {
-
 }

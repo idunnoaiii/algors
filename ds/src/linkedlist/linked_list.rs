@@ -25,6 +25,7 @@ pub struct TransactionLog {
 }
 
 impl TransactionLog {
+
     pub fn new_empty() -> Self {
         TransactionLog {
             head: None,
@@ -89,13 +90,3 @@ impl TransactionLog {
     }
 }
 
-//
-fn main() {
-    let mut name = Some("thien".to_string());
-
-    name.take();
-
-    name = Some("".to_string());
-
-    println!("{:?}", name);
-}
